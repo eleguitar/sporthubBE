@@ -20,16 +20,16 @@ import com.sporthub.backend.repository.UserRepository;
 public class UserController {
 	@Autowired
 	private UserRepository userRepo;
-	
-	@Autowired
-	private RoleRepository roleRepo;
-	
-	
+
+	//@Autowired
+	//private RoleRepository roleRepo;
+
+
 	@GetMapping("/all")
 	public @ResponseBody Iterable<User> getUsers(){
 		return userRepo.findAll();
 	}
-	
+
 	@PostMapping("/add")
 	public @ResponseBody String addUser(
 			@RequestParam String first_name,
@@ -60,6 +60,6 @@ public class UserController {
 			return "user added";
 		}
 		return "not added";
-		
+
 	}
 }
